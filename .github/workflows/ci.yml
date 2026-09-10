@@ -5,10 +5,14 @@ on:
     branches:
       - master
       - main
+      # Accountflow fork: our commits live on `accountflow`, never on `main`
+      # (which mirrors upstream). See FORK.md.
+      - accountflow
   pull_request:
     branches:
       - master
       - main
+      - accountflow
   # Required so the CI jobs (notably the required `ci-ok` aggregation check) run
   # on the merge queue's synthetic merge_group branch. Without this the queue
   # waits forever for a check that never fires.
