@@ -108,6 +108,15 @@ The stock `release.yml` (grafana/plugin-actions/build-plugin) cannot be used: it
 an unconditional check requiring the tag to be exactly `v<version>`, which rejects
 the `nais-apm-app-v…` tag shape.
 
+## Current release
+
+| | |
+|---|---|
+| Tag | `nais-apm-app-v0.24.0-accountflow.1` |
+| Plugin version | `0.24.0-accountflow.1` |
+| Zip | https://github.com/accountflow/grafana-apm-app/releases/download/nais-apm-app-v0.24.0-accountflow.1/nais-apm-app-0.24.0-accountflow.1.zip |
+| sha1 | `c89c2a74316057135725d7fb6222285ac101e384` |
+
 ## Exit criterion
 
 The fork is done when upstream ships a working player: either a
