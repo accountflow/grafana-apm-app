@@ -119,13 +119,14 @@ the `nais-apm-app-v…` tag shape.
 
 ## Prepared release
 
-`package.json` prepares `0.24.0-accountflow.2` for the patched Node build
-toolchain. After its PR lands on `accountflow`, publish the fresh immutable tag
-`nais-apm-app-v0.24.0-accountflow.2` using the procedure above. The release zip and
-checksum do not exist until that workflow succeeds. Then update iac's
-`monitoring/k8s/grafana.ts` with the new version and the published `.zip.sha1`;
-the previously published release above remains the installation baseline until
-that infrastructure change is applied and verified.
+`package.json` prepares `0.24.0-accountflow.3` with Go 1.26.10, including the
+updated certificate distrust filter for eMudhra. After its PR lands on
+`accountflow`, publish the fresh immutable tag
+`nais-apm-app-v0.24.0-accountflow.3` using the procedure above. Version
+`0.24.0-accountflow.2` is already published; do not rebuild or replace its assets.
+The new release zip and checksum do not exist until the workflow succeeds. Then
+update iac's `monitoring/k8s/grafana.ts` with the new version and the published
+`.zip.sha1`, and verify the infrastructure change after applying it.
 
 ## Exit criterion
 

@@ -1,6 +1,6 @@
 module github.com/nais/grafana-otel-plugin
 
-go 1.26.5
+go 1.26.10
 
 require (
 	github.com/grafana/grafana-plugin-sdk-go v0.296.2
