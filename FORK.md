@@ -93,8 +93,8 @@ iac's init container strips `MANIFEST.txt` when present.
    `release-fork.yml` checks the tag against `package.json`.
 
    ```sh
-   git tag nais-apm-app-v0.24.0-accountflow.1
-   git push origin accountflow nais-apm-app-v0.24.0-accountflow.1
+   git tag nais-apm-app-v0.24.0-accountflow.2
+   git push origin nais-apm-app-v0.24.0-accountflow.2
    ```
 
 3. The tag push triggers `release-fork.yml`: frontend build, Go backend build
@@ -108,7 +108,7 @@ The stock `release.yml` (grafana/plugin-actions/build-plugin) cannot be used: it
 an unconditional check requiring the tag to be exactly `v<version>`, which rejects
 the `nais-apm-app-v…` tag shape.
 
-## Current release
+## Published release
 
 | | |
 |---|---|
@@ -116,6 +116,16 @@ the `nais-apm-app-v…` tag shape.
 | Plugin version | `0.24.0-accountflow.1` |
 | Zip | https://github.com/accountflow/grafana-apm-app/releases/download/nais-apm-app-v0.24.0-accountflow.1/nais-apm-app-0.24.0-accountflow.1.zip |
 | sha1 | `c89c2a74316057135725d7fb6222285ac101e384` |
+
+## Prepared release
+
+`package.json` prepares `0.24.0-accountflow.2` for the patched Node build
+toolchain. After its PR lands on `accountflow`, publish the fresh immutable tag
+`nais-apm-app-v0.24.0-accountflow.2` using the procedure above. The release zip and
+checksum do not exist until that workflow succeeds. Then update iac's
+`monitoring/k8s/grafana.ts` with the new version and the published `.zip.sha1`;
+the previously published release above remains the installation baseline until
+that infrastructure change is applied and verified.
 
 ## Exit criterion
 
